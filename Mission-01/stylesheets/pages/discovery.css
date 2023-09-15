@@ -1,0 +1,160 @@
+
+body{
+  display:inline-block;
+  margin:0;
+  padding-top:100px;
+  padding-right:579px;
+  padding-bottom:242px;
+  padding-left:321px;
+}
+header {
+  display:inline-block;
+  align-items:center;
+  padding-bottom:48px;
+}
+
+header h1 {
+  display:inline-block;
+  justify-content: center;
+  align-items: center;
+  margin:0px;
+}
+
+
+
+/* 제목|부제목*/
+
+
+.main_section {
+  display:inline-flex;
+  flex-direction: row;
+  align-items:center;
+  
+}
+
+.main_section h2 {
+  margin:0;
+}
+
+.main_section span {
+  margin-left:10px;
+  margin-right: 10px;
+  font-size:20px;
+}
+
+.main_section h3 {
+  font-size : 14px;
+  color:#c4c4c4;
+  margin:0;
+}
+
+/* 오늘의 발견 섹션*/
+.container {
+  width:1036px;
+  height:1002px;
+  display:flex;
+  justify-content: center;
+  padding-top:24px;
+  
+}
+
+.discovery_container {
+  width: 1036px;
+  display: block;
+  justify-content: center;
+}
+
+.discovery_container a {
+  float: left;
+  align-items: center;
+  border: 1px solid var(--gray-500, #C4C4C4);
+  background: var(--White, #FFF);
+  margin-top: auto;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  margin-left: auto;
+  display: inline-flex;
+  justify-content: center;
+  position: relative;
+}
+
+.bigsize:hover {
+  border-color: #0074E9;
+}
+
+.smallsize:hover {
+  border-color: #0074E9;
+}
+
+.bigsize {
+  width: 502px;
+  height: 310px;
+}
+
+
+.smallsize {
+  width: 243px;
+  height: 310px;
+}
+
+.button {
+  width: 42px;
+  height: 42px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  position: absolute;
+  overflow: hidden;
+  bottom:0;
+  left:0;
+}
+
+
+
+
+
+.button::after {
+  content: "";
+  background-image: url(../../assets/icon/angle-right-square.svg);
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.2);
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3; /* 버튼 아이콘을 다른 요소 위에 올리기 위해 z-index를 설정합니다. */
+}
+
+.discovery_container {
+  /* 이미지 링크에 아이콘 요소를 포함하는 버튼을 겹치게 하려면 여기에 z-index 값을 설정하세요. */
+  position: relative; /* 버튼 아이콘 위에 올라가도록 설정합니다. */
+  z-index: 1; /* 다른 요소 위에 아이콘을 올릴 수 있도록 설정합니다. */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+마우스를 요소 위에 가져갔을 때 아이콘에 적용할 스타일을 정의합니다.
+.bigsize::after::before:hover,
+.smallsize::after::before:hover {
+  background-color: #0074E9; /* 파란색 배경으로 변경합니다.
+  transform: translateX(10px); /* 아이콘을 오른쪽으로 약간 이동시킵니다.
+  content: "구매하기"; /* "구매하기" 텍스트를 추가합니다.
+  color: #fff; /* 텍스트 색상을 흰색으로 설정합니다.
+  padding: 8px 12px; 텍스트 주위에 여백을 추가합니다.
+  position: absolute; /* 텍스트가 아이콘 위에 겹쳐지도록 설정합니다.
+  z-index: 1; 텍스트가 아이콘 위에 나타나도록 설정합니다.
+} */
