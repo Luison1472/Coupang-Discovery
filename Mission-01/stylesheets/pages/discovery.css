@@ -29,10 +29,6 @@ header h1 {
   display:inline-flex;
   flex-direction: row;
   align-items:center;
-  
-}
-
-.main_section h2 {
   margin:0;
 }
 
@@ -50,16 +46,6 @@ header h1 {
 
 /* 오늘의 발견 섹션*/
 .container {
-  width:1036px;
-  height:1002px;
-  display:flex;
-  justify-content: center;
-  padding-top:24px;
-  
-}
-
-.discovery_container {
-  width: 1036px;
   display: block;
   justify-content: center;
 }
@@ -121,17 +107,10 @@ header h1 {
   display: inline-block;
   background-color: rgba(0, 0, 0, 0.2);
   background-repeat: no-repeat;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 3; /* 버튼 아이콘을 다른 요소 위에 올리기 위해 z-index를 설정합니다. */
+position: relative;
+border:none;
 }
 
-.discovery_container {
-  /* 이미지 링크에 아이콘 요소를 포함하는 버튼을 겹치게 하려면 여기에 z-index 값을 설정하세요. */
-  position: relative; /* 버튼 아이콘 위에 올라가도록 설정합니다. */
-  z-index: 1; /* 다른 요소 위에 아이콘을 올릴 수 있도록 설정합니다. */
-}
 
 
 
