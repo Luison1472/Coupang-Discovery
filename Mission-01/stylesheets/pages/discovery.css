@@ -86,11 +86,9 @@ header h1 {
 
 .container .item .button-link {
   position: absolute;
-  width: 42px;
-  height: 42px;
   left: 20px;
   bottom: 20px;
-  display:inline-block;
+  z-index: 2;
 }
 
 .container .item .img-link {
@@ -106,17 +104,8 @@ header h1 {
   display: block;
 }
 
-.buttons {
-  padding: 0;
-  margin: 0;
-  position: relative;
-  z-index: 2; /* .buttons:hover::before를 .container .item .button-link .buttons 위로 겹치기 위한 z-index 설정 */
-  transition: background-position 1s; /* 배경 위치에 대한 트랜지션 설정 */
-}
-
-
-.buttons:hover::after {
-  content: "구매하기"; /* "구매하기" 텍스트 추가 */
+/* .buttons:hover::after {
+  content: "구매하기";
   background-image: url(../../assets/icon/angle-right-square.svg);
   background-repeat: no-repeat;
   background-position: right center;
@@ -126,7 +115,7 @@ header h1 {
   font-weight: 500;
   line-height: 120%;
   color: white;
-  padding: 12px 18px 13px 20px; /* 패딩을 한 줄로 간략하게 표현 */
+  padding: 12px 18px 13px 20px;
   background-color: var(--blue-600, #0074E9);
   position: absolute;
   top: 0;
@@ -134,24 +123,47 @@ header h1 {
   opacity: 1;
   transition: opacity 1s, background-position 1s;
   z-index: 3;
+} */
+
+.container .item .button-link .buttons:hover {
+  width: auto;
+  background-image: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-wrap: nowrap;
+  color: white;
+  background-color: var(--blue-600, #0074E9);
+  padding: 12px 18px 13px 20px; /* 패딩을 한 줄로 간략하게 표현 */
+  gap: 16px;
 }
 
-.buttons:hover {
-  background-position:right center;
-  opacity:1;
+.container .item .button-link .buttons:hover::before {
+  content: '구매하기';
+  align-content: center;
+}
+
+.container .item .button-link .buttons:hover::after {
+  content: '';
+  background-image: url(../../assets/icon/angle-right-square.svg);
+  background-size: 6px 42px;
+  align-content: center;
 }
 
 .container .item .button-link .buttons {
-content: "";
-background-image: url(../../assets/icon/angle-right-square.svg);
-width: 42px;
-height: 42px;
-display: inline-block;
-background-color: rgba(0, 0, 0, 0.2);
-background-repeat: no-repeat;
-position: relative;
-border:none;
-z-index:1;
+  width: 42px;
+  height: 42px;
+  font-family: Noto Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 16.8px */
+  flex-shrink: 0;
+  background-image: url(../../assets/icon/angle-right-square.svg);
+  background-color: var(--opacity-20, rgba(0, 0, 0, 0.20));
+  background-repeat: no-repeat;
+  background-position: center;
+  border:none;
 }
 
 
