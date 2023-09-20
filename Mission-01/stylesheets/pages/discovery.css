@@ -144,10 +144,11 @@ header h1 {
 }
 
 .container .item .button-link .buttons:hover::after {
-  content: '';
+  content: '  ';
+  width: 6px;
+  height: 42px;
   background-image: url(../../assets/icon/angle-right-square.svg);
-  background-size: 6px 42px;
-  align-content: center;
+  background-position: center;
 }
 
 .container .item .button-link .buttons {
