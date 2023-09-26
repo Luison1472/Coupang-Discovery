@@ -86,8 +86,6 @@ header h1 {
 
 .container .item .button-link {
   position: absolute;
-  width: 42px;
-  height: 42px;
   left: 20px;
   bottom: 20px;
   display:inline-block;
@@ -106,15 +104,6 @@ header h1 {
   display: block;
 }
 
-.buttons {
-  padding: 0;
-  margin: 0;
-  position: relative;
-  z-index: 2; /* .buttons:hover::before를 .container .item .button-link .buttons 위로 겹치기 위한 z-index 설정 */
-  transition: background-position 1s; /* 배경 위치에 대한 트랜지션 설정 */
-}
-
-
 .buttons:hover::after {
   content: "구매하기"; /* "구매하기" 텍스트 추가 */
   background-image: url(../../assets/icon/angle-right-square.svg);
@@ -126,7 +115,6 @@ header h1 {
   font-weight: 500;
   line-height: 120%;
   color: white;
-  padding: 12px 18px 13px 20px; /* 패딩을 한 줄로 간략하게 표현 */
   background-color: var(--blue-600, #0074E9);
   position: absolute;
   top: 0;
@@ -136,10 +124,6 @@ header h1 {
   z-index: 3;
 }
 
-.buttons:hover {
-  background-position:right center;
-  opacity:1;
-}
 
 .container .item .button-link .buttons {
 content: "";
@@ -164,12 +148,4 @@ z-index:1;
 .container .smallsize {
   width: 243px;
   height: 310px;
-}
-
-.bigsize:hover {
-  border-color:#0096e4;
-}
-
-.smallsize:hover {
-  border-color:#0096e4
 }
