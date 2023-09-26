@@ -9,7 +9,7 @@ body {
   margin-bottom:242px;
   margin-left:321px;
 }
-/* 100 579 242 321px; */
+
 header {
   display:inline-block;
   align-items:center;
@@ -22,6 +22,8 @@ header h1 {
   align-items: center;
   margin:0px;
 }
+
+
 
 /* main section */
 .main_section {
@@ -42,6 +44,7 @@ header h1 {
   text-align:center;
 }
 
+
 .main_section span {
   margin: 0px 10px 0px 10px;
   font-size:20px;
@@ -58,6 +61,16 @@ header h1 {
   text-align:center;
 }
 
+.coupang_logo:focus {
+  outline: 2px solid #0096e4;
+}
+
+.main_section h2:focus,
+.main_section h3:focus {
+  outline: 2px solid #0096e4;
+}
+
+
 .main_section .today_item {
   margin:0;
 }
@@ -73,7 +86,20 @@ header h1 {
   display: block;
   justify-content: center;
   align-items: center;
+  width:1036px;
+  height:958px;
 }
+
+.button_img {
+  position:absolute;
+  width:42px;
+  height:42px;
+  background-color:rgba(0, 0, 0, 0.20);
+  bottom:20px;
+  left:20px;
+  z-index:1;
+}
+
 
 .container .item {
   border: 1px solid var(--gray-500, #C4C4C4);
@@ -84,11 +110,16 @@ header h1 {
   margin-bottom:16px;
 }
 
-.container .item .button-link {
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
-  display:inline-block;
+
+
+.container .item.bigsize {
+  width: 502px;
+  height: 310px;
+}
+
+.container .item.smallsize {
+  width: 243px;
+  height: 310px;
 }
 
 .container .item .img-link {
@@ -104,48 +135,65 @@ header h1 {
   display: block;
 }
 
-.buttons:hover::after {
-  content: "구매하기"; /* "구매하기" 텍스트 추가 */
-  background-image: url(../../assets/icon/angle-right-square.svg);
-  background-repeat: no-repeat;
-  background-position: right center;
-  text-align: center;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 120%;
-  color: white;
-  background-color: var(--blue-600, #0074E9);
+ .container .item:hover {
+  border-color:#0096e4;
+  
+}
+
+.item.bigsize .img-link {
+  position: relative;
+  display: inline-block;
+}
+
+.item.smallsize .img-link {
+  position: relative;
+  display: inline-block;
+}
+
+.container .item .img-link::after {
+  content: '';
   position: absolute;
-  top: 0;
-  left:0;
-  opacity: 1;
-  transition: opacity 1s, background-position 1s;
+  width: 112px;
+  height: 42px;
+  background-color: rgba(0, 116, 233, 1);
+  display: inline-flex;
+  left: 20px;
+  bottom: 20px;
   z-index: 3;
+  background-image: url("../../assets/icon/angle-right.svg");
+  background-size: 6px 10px;
+  background-repeat: no-repeat;
+  background-position: 90px;
+  opacity: 0;
+  transition: opacity 0.2s ease; 
 }
 
-
-.container .item .button-link .buttons {
-content: "";
-background-image: url(../../assets/icon/angle-right-square.svg);
-width: 42px;
-height: 42px;
-display: inline-block;
-background-color: rgba(0, 0, 0, 0.2);
-background-repeat: no-repeat;
-position: relative;
-border:none;
-z-index:1;
+.container .item .img-link::before {
+  content: '구매하기';
+  position: absolute;
+  color: #fff;
+  display: inline-flex;
+  line-height: 120%;
+  font-size: 14px;
+  left: 40px;
+  bottom: 33px;
+  z-index: 4;
+  opacity: 0;
+  transition: opacity 0.2s ease; 
 }
 
-
-.container .bigsize {
-  width: 502px;
-  height: 310px;
+.container .item .img-link:hover::after,
+.container .item .img-link:hover::before {
+  opacity: 1;
 }
 
+.container .item .img-link:focus {
+ outline:2px solid #0096e4;
+}
 
-.container .smallsize {
-  width: 243px;
-  height: 310px;
+.container .item .img-link:focus::after,
+.container .item .img-link:focus::before {
+  outline:none;
+  opacity: 1;
+ 
 }
