@@ -1,6 +1,0 @@
-/* Base 스타일 작성 */
-* {
-  box-sizing: border-box; /* 기본 box-sizing 속성을 border-box로 설정 */
-  font-size: 14px; /* 기본 글자 크기 설정 */
-  font-family: 'Noto Sans KR', sans-serif; /* 웹폰트 선언 */
-}
